@@ -17,6 +17,8 @@ mobileNav?.querySelectorAll('a').forEach((link) => {
 
 const galleries = document.querySelectorAll('.gallery-modal');
 const galleryTriggers = document.querySelectorAll('.service-card-clickable');
+const teamGallery = document.getElementById('team-gallery');
+const teamPhotoTriggers = document.querySelectorAll('.team-photo-trigger');
 
 const closeGallery = (gallery) => {
   gallery.classList.remove('is-open');
@@ -40,6 +42,10 @@ galleryTriggers.forEach((trigger) => {
       event.preventDefault();
       openGallery(gallery);
     }
+  });
+
+  teamPhotoTriggers.forEach((trigger) => {
+    trigger.addEventListener('click', () => openGallery(teamGallery));
   });
 });
 
